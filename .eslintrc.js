@@ -1,0 +1,48 @@
+/* eslint-disable linebreak-style */
+module.exports = {
+  env: {
+    commonjs: true,
+    es2021: true,
+    mocha: true,
+  },
+  extends: ['airbnb-base', 'plugin:mocha/recommended'],
+  globals: {
+    Errors: 'readonly',
+    api: 'readonly',
+    createApi: 'readonly',
+    factory: 'readonly',
+    faker: 'readonly',
+    moment: 'readonly',
+    sequelize: 'readonly',
+    uuid: 'readonly',
+  },
+  parser: '@babel/eslint-parser',
+  parserOptions: {
+    babelOptions: {
+      babelrc: false,
+      configFile: false,
+      presets: ['@babel/preset-env'],
+    },
+    requireConfigFile: false,
+  },
+  plugins: ['sort-keys-fix'],
+  rules: {
+    'function-paren-newline': 'off',
+    'global-require': 'off',
+    'implicit-arrow-linebreak': 'off',
+    indent: ['error', 2, { SwitchCase: 1, ignoredNodes: ['TemplateLiteral'], offsetTernaryExpressions: true }],
+    'linebreak-style': ['error', 'unix'],
+    'max-len': ['error', { code: 120 }],
+    'mocha/no-mocha-arrows': 'off',
+    'no-await-in-loop': 'off',
+    'no-console': ['error', { allow: ['info'] }],
+    'no-continue': 'off',
+    'no-plusplus': 'off',
+    'no-shadow': 'off',
+    'no-unused-expressions': 'off',
+    'object-curly-newline': 'off',
+    radix: 'off',
+    semi: ['error', 'never'],
+    'sort-keys-fix/sort-keys-fix': 'error',
+  },
+}
